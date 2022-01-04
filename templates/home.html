@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <form method="POST" action="http://localhost:8000/predict" enctype="multipart/form-data">
+            dataset : <input type="file" name="dataset" onchange="setDatasetPath();" id="dataset">
+                        <input type="hidden" name="dataset_path" id="dataset_path">
+            classifier : <select name="classifier">
+                            <option value="knn">knn</option>
+                            <option value="naive-bayes">naive-bayes</option>
+                            <option value="decision-tree">decision-tree</option>
+                        </select>
+            <input type="submit" name="submit" value="result">
+        </form>
+        {{dataset}}<br>
+        {{classifier}}<br>
+        {{classification_report | safe}}<br>
+        {{accuracy}}<br>
+        {{confusion_matrix}}<br>
+        {%if (decision_tree):%}
+                
+                <img src="{{url_for('static', filename='decision_tree.jpg')}}" width="60%" />   
+        {%endif%}
+
+        <script>
+            function setDatasetPath(){
+                var dataset = document.getElementById("dataset");
+                var dataset_path = document.getElementById("dataset_path");
+                dataset_path.value = dataset.value;
+                
+            }
+        </script>
+    </body>
+</html>
