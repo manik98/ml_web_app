@@ -1,25 +1,41 @@
 <html>
+    <head>
+        <title>ML Web App</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
     <body>
         <form method="POST" action="http://localhost:8000/predict" enctype="multipart/form-data">
-            dataset : <input type="file" name="dataset" onchange="setDatasetPath();" id="dataset">
-                        <input type="hidden" name="dataset_path" id="dataset_path">
-            classifier : <select name="classifier">
-                            <option value="knn">knn</option>
-                            <option value="naive-bayes">naive-bayes</option>
-                            <option value="decision-tree">decision-tree</option>
-                        </select>
-            <input type="submit" name="submit" value="result">
+            <div style="display: flex;width:600px;margin-left: auto;margin-right: auto;">
+                <div class="parent-div">
+                    <button class="btn-upload">Dataset</button>
+                    <input type="file" name="dataset" onchange="setDatasetPath();" id="dataset">
+                    <input type="hidden" name="dataset_path" id="dataset_path">
+                </div>
+                <div class="parent-div">
+                    <select name="classifier">
+                        <option value="">Classifier</option>
+                        <option value="knn">KNN</option>
+                        <option value="naive-bayes">Naive Bayes</option>
+                        <option value="decision-tree">Decision Tree</option>
+                    </select>
+                </div>
+                <div class="parent-div">
+                    <input type="submit" name="submit" value="Result">
+                </div>
+            </div>
         </form>
-        {{dataset}}<br>
-        {{classifier}}<br>
+        <div style="width:600px;margin-left: auto;margin-right: auto;margin-top: 10px;font-size: 18px;">
+        Dataset : {{dataset}}<br>
+        Classifier : {{classifier}}<br>
+        Accuracy : {{accuracy}}<br>
+        Confusion Matrix :  {{confusion_matrix}}<br>
+        Classification Report : <br>
         {{classification_report | safe}}<br>
-        {{accuracy}}<br>
-        {{confusion_matrix}}<br>
         {%if (decision_tree):%}
                 
-                <img src="{{url_for('static', filename='decision_tree.jpg')}}" width="60%" />   
+                <img src="{{url_for('static', filename='decision_tree.jpg')}}" width="100%" />   
         {%endif%}
-
+        </div>
         <script>
             function setDatasetPath(){
                 var dataset = document.getElementById("dataset");

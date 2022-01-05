@@ -1,0 +1,65 @@
+
+*{
+  margin : 0;
+}
+.parent-div {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .parent-div input[type=file] {
+    left: 0;
+    top: 0;
+    opacity: 0;
+    position: absolute;
+    font-size: 90px;
+  }
+  
+  .btn-upload {
+    background-color:#ff9100 ;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    font-size: 22px;
+    font-weight: bold;
+    width: 200px;
+    height: 200px;
+  }
+  select{
+    width: 200px;
+    height: 200px;
+    appearance:none;
+    text-align: center;
+    border: none;
+    background-color: #2962ff;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+  }
+  option{
+    background-color: #768fff;
+    font-size: 16px;
+    padding: 0;
+  }
+  input[type=submit]{
+    width: 200px;
+    height: 200px;
+    appearance:none;
+    text-align: center;
+    border: none;
+    background-color: #ffd600;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+  }
+  .dataframe{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    width: 600px;
+    font-size: 18px;
+  }
+ th,td{
+    padding: 10px;
+    text-align: center;
+  }
