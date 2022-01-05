@@ -1,6 +1,7 @@
 
 *{
   margin : 0;
+  font-family: 'Roboto', sans-serif;
 }
 .parent-div {
     display: inline-block;
@@ -25,6 +26,7 @@
     font-weight: bold;
     width: 200px;
     height: 150px;
+    font-weight: 700;
   }
   select{
     width: 200px;
