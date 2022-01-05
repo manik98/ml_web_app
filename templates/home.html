@@ -25,14 +25,18 @@
             </div>
         </form>
         <div style="width:600px;margin-left: auto;margin-right: auto;margin-top: 10px;font-size: 18px;">
-        Dataset : {{dataset}}<br>
-        Classifier : {{classifier}}<br>
-        Accuracy : {{accuracy}}<br>
-        Confusion Matrix :  {{confusion_matrix}}<br>
-        Classification Report : <br>
-        {{classification_report | safe}}<br>
-        {%if (decision_tree):%}
-                
+        {%if (dataset):%} 
+            Dataset : {{dataset}}<br>
+            Classifier : {{classifier}}<br>
+            Accuracy : {{accuracy}}<br>
+            Confusion Matrix :<br>
+            
+                {{confusion_matrix}}<br>
+            
+            Classification Report : <br>
+            {{classification_report | safe}}<br>
+        {%endif%}
+        {%if (decision_tree):%}    
                 <img src="{{url_for('static', filename='decision_tree.jpg')}}" width="100%" />   
         {%endif%}
         </div>

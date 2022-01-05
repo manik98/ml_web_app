@@ -24,11 +24,11 @@
     font-size: 22px;
     font-weight: bold;
     width: 200px;
-    height: 200px;
+    height: 150px;
   }
   select{
     width: 200px;
-    height: 200px;
+    height: 150px;
     appearance:none;
     text-align: center;
     border: none;
@@ -44,7 +44,7 @@
   }
   input[type=submit]{
     width: 200px;
-    height: 200px;
+    height: 150px;
     appearance:none;
     text-align: center;
     border: none;
