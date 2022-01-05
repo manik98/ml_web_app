@@ -30,9 +30,10 @@
             Classifier : {{classifier}}<br>
             Accuracy : {{accuracy}}<br>
             Confusion Matrix :<br>
-            
-                {{confusion_matrix}}<br>
-            
+            {%for i in confusion_matrix:%}
+                {% print(i) %}<br>
+            {%endfor%}
+            <br>
             Classification Report : <br>
             {{classification_report | safe}}<br>
         {%endif%}
